@@ -124,6 +124,8 @@ The leadership tabs (`TL_Roster`, `OM_Roster`, `AGM_Roster`) are manual **on pur
 
 ## Flow 1: weekly upload
 
+The user-facing steps and the exact tabs and columns each source needs are in [Uploading the weekly files](uploading-data.md).
+
 1. The user pastes the ID or URL of up to 3 spreadsheets into **Files settings** (each one is optional).
 2. `processWeeklyUpload` opens each source with `openById` and reads the expected tab (`GCDC&C Responses`, `Raw`, `DATA AUX Engine`).
 3. If QA is present, the `Roster` tab in that file replaces the local one.

@@ -22,6 +22,7 @@ Also in [docs/screens.md](docs/screens.md): the account [targets](docs/screens.m
 
 ### More documentation
 
+- [Uploading the weekly files](docs/uploading-data.md): step by step, and the tabs, columns and files each source must have.
 - [Architecture](docs/architecture.md): files, sheets, data flow, caches and AI.
 - [CLAUDE.md](CLAUDE.md): technical guide (clasp, Fuelix, working rules, known gotchas).
 
@@ -42,7 +43,7 @@ The solid arrows carry numbers. The dotted arrows show the only place that uses 
 
 Every dashboard section can be copied as an **image** (a button in the corner of each framed section) and each whole screen can be copied from the side menu, ready to paste into a slide or document. See [features shared by every screen](docs/screens.md#features-shared-by-every-screen).
 
-1. Every week, the IDs of 3 source Google Sheets are pasted into **Files settings**.
+1. Every week, the IDs of 3 source Google Sheets are pasted into **Files settings** (see [Uploading the weekly files](docs/uploading-data.md) for the steps and the required tabs and columns).
 2. The script reads them, joins them to the **Roster** and appends the rows to `History_QA`, `History_Survey` and `History_WFM`.
 3. When a dashboard is opened, the server computes the metrics from those sheets and renders them in an HTML template.
 4. Only the **Agent Dashboard** uses AI (Fuelix) to write the coaching plan. The TL, OM and AGM views are numbers only.
@@ -57,7 +58,8 @@ The full architecture is in [docs/architecture.md](docs/architecture.md).
 ├── CLAUDE.md            Technical instructions for Claude Code (clasp, Fuelix, working rules)
 ├── docs/
 │   ├── architecture.md  How the script works: files, data flow, sheets, caches
-│   └── screens.md       What each screen does
+│   ├── screens.md       What each screen does
+│   └── uploading-data.md How to upload the weekly files and what they must contain
 ├── appsscript.json      Project manifest (time zone, services, web app settings)
 ├── *.js                 Server code (called .gs in Google)
 └── *.html               UI shell and one template per dashboard
@@ -72,5 +74,5 @@ The full architecture is in [docs/architecture.md](docs/architecture.md).
 3. Install clasp and sign in: `nvm use 20 && npm install -g @google/clasp && clasp login`.
 4. Pull the code from the copy: `clasp clone <SCRIPT_ID_OF_THE_COPY>`.
 5. Create the deployment: **Deploy → New deployment → Web app**.
-6. Fill in `TL_Roster`, `OM_Roster` and `AGM_Roster` by hand and run the first upload in Files settings.
+6. Fill in `TL_Roster`, `OM_Roster` and `AGM_Roster` by hand and run the first upload in Files settings. The upload instructions and the required file format are in [docs/uploading-data.md](docs/uploading-data.md).
 7. Optional: create the Script Property `HELP_LINK` with the URL of this documentation. A "?" help button appears at the bottom of the side menu only when it holds a valid `http(s)` URL. No new deployment is needed to change it.

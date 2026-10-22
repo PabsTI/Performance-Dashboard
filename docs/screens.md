@@ -45,6 +45,7 @@ Targets live in `CONFIG.TARGETS` (`Config.js`) and come from the original projec
 
 **Audience:** whoever runs the weekly upload.
 **What it does:** feeds the spreadsheet with the week's data.
+**Full instructions:** [Uploading the weekly files](uploading-data.md) explains the steps and the tabs, columns and files each source must have.
 
 - Three fields: QA (`GCDC&C Responses`), Survey (`Raw`) and WFM (`DATA AUX Engine`). They accept the ID or the full URL of the Google Sheet.
 - Each field is optional, but at least one is required.

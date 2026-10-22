@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Technical guide for Claude Code in this project. What the product does is in [README.md](README.md); the details are in [docs/architecture.md](docs/architecture.md) and [docs/screens.md](docs/screens.md).
+Technical guide for Claude Code in this project. What the product does is in [README.md](README.md); the details are in [docs/architecture.md](docs/architecture.md) and [docs/screens.md](docs/screens.md). How to upload the weekly files, and the tabs and columns they must have, is in [docs/uploading-data.md](docs/uploading-data.md).
 
 ## What this is
 
